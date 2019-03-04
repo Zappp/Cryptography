@@ -116,7 +116,6 @@ c = d = int(input('Podaj ilość kolumn: '))
 i = 0
 a = []  # how many times each letter occured in every column (list of c lists)
 b = [0] * c  # text in column in ints
-h = []  # help list to store data from while loop
 
 while c > 0:
     n, new_n = column(n, c)
