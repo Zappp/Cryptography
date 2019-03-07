@@ -58,7 +58,7 @@ def combination(d):
     comb = [0] * d
     for i in range(d):
         comb[i] = i
-    comb_output = list(itertools.permutations(comb, 2))
+    comb_output = list(itertools.combinations_with_replacement(comb, 2))
     return comb_output
 
 
@@ -131,4 +131,4 @@ while c > 0:
 for i in range(len(combination(d))):
     x = combination(d)[i]
     y1, y2 = x[0], x[1]
-    print(f'IMc(column [{x[0]} and {x[1]}]) = {IMc(a, y1, y2)}')
+    print(f'IMc(column [{y1} and {y2}]) = {IMc(a, y1, y2)}')
