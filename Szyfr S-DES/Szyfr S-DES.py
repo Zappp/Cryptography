@@ -82,6 +82,8 @@ def szyfrowanie_kluczami(t, klucz, runda):
     Xor_1_1 = Xor_1[0:4]
     Xor_1_2 = Xor_1[4:8]
     SB_ret = f'{sbox(Xor_1_1, SB1list)}{sbox(Xor_1_2, SB2list)}'
+    print(f'SBox1: {sbox(Xor_1_1, SB1list)}')
+    print(f'SBox2: {sbox(Xor_1_2, SB2list)}')
     P41_ = permutation(SB_ret, per5, per6)
     P41 = ''.join(P41_)
 
@@ -106,7 +108,6 @@ def sbox(xor, SBl):
 
     xb1 = int(f'{a}{d}', 2)
     xb2 = int(f'{b}{c}', 2)
-    print(f'wartosc wyciągana z sboxa: {SBl[xb1][xb2]}')
     if (SBl[xb1][xb2] == 0):
         return '00'
     elif ((SBl[xb1][xb2]) == 1):
@@ -156,13 +157,15 @@ print(f'po permutacji wstępnej: {perm_list1}')
 
 print("###########################################################################")
 
-for i in range(int(len(my_bin)/8)):
+for i in range(int(len(my_bin) / 8)):
     print(f'BAJT : {i + 1}')
+    print('\nRUNDA 1:')
     bin_po_klucz1 = szyfrowanie_kluczami(perm_list1[i], Klucz1, 1)  # szyfrowanie kluczem rundy 1
     bin_po_zamianie = bin_po_klucz1[4:] + bin_po_klucz1[:4]
+    print('\nRUNDA 2:')
     bin_po_klucz2 = szyfrowanie_kluczami(bin_po_zamianie, klucz2, 2)  # szyfrowanie kluczem rundy 2
     reverse_perm_ = permutation(bin_po_klucz2, per1, per7)
     reverse_perm = ''.join(reverse_perm_)
-    print(f'szyfrogram : {bin_to_hex(reverse_perm)}')
+    print(f'\nszyfrogram : {bin_to_hex(reverse_perm)}')
 
     print("###########################################################################")
