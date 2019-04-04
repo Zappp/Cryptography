@@ -1,4 +1,4 @@
-my_hexdata = input("INPUT: ")
+my_hexdata = input("INPUT (in hex): ")
 
 per1 = [0, 1, 2, 3, 4, 5, 6, 7]
 per2 = [1, 5, 2, 0, 3, 7, 4, 6]
