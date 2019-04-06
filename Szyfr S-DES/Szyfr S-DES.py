@@ -27,7 +27,8 @@ def hex_to_bin(hex):
     scale = 16  ## equals to hexadecimal
     num_of_bits = 8
     my_bin = (bin(int(hex, scale))[2:].zfill(num_of_bits))
-    my_bin = my_bin + '0' * (((len(my_bin) + 8) - ((len(my_bin) + 8) % 8)) - len(my_bin))
+    if (len(my_bin)%8 != 0):
+        my_bin = my_bin + '0' * (((len(my_bin) + 8) - ((len(my_bin) + 8) % 8)) - len(my_bin))
     return my_bin
 
 
