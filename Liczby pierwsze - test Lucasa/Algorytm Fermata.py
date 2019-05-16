@@ -53,7 +53,7 @@ def removeDuplicates(listofElements):
     return uniqueList
 
 
-d = step1(2296)
+d = step1(int(input('a: ')))
 step23(d)
 
 divisors.sort()
