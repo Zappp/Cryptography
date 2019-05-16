@@ -131,4 +131,4 @@ while c > 0:
 for i in range(len(combination(d))):
     x = combination(d)[i]
     y1, y2 = x[0], x[1]
-    print(f'IMc(column [{y1} and {y2}]) = {IMc(a, y1, y2)}')
+    print(f'IMc(column [{x[0]} and {x[1]}]) = {IMc(a, y1, y2)}')
