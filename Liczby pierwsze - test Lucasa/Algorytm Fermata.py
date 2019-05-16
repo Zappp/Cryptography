@@ -72,6 +72,3 @@ while 0 in multiplication:
     multiplication.remove(0)
 
 print(removeDuplicates(divisors), multiplication)
-
-
-
