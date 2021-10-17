@@ -1,1 +1,1 @@
-# Course of study: Cryptography
+# Course: Cryptography
